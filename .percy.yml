@@ -1,0 +1,11 @@
+version: 2
+snapshot:
+  widths: [375, 1280]
+  min-height: 1024
+  percyCSS: ''
+  enableJavaScript: true
+  disableShadowDOM: false
+discovery:
+  allowed-hostnames: ['localhost']
+  network-idle-timeout: 100
+  concurrency: 10 

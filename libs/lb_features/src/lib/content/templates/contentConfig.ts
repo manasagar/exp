@@ -1,0 +1,62 @@
+export const contentConfig = {
+  mainDetails: {
+    toBeRendered: 'all',
+    weightPerCard: '2',
+    maxInSession: '10',
+    time: '30',
+  },
+  conceptAnalogy: {
+    toBeRendered: '1',
+    placement: '0',
+    selection: 'random',
+    maxInSession: '2',
+    weightPerCard: '2',
+    time: '30',
+  },
+  conceptCode: {
+    toBeRendered: 'all',
+    maxInSession: '2',
+    weightPerCard: '3',
+    time: '30',
+  },
+  assignmentSt: {
+    toBeRendered: '1',
+    maxInSession: '1',
+    weightPerCard: '3',
+    placement: 'last',
+    time: '30',
+  },
+  jokes: {
+    toBeRendered: '1',
+    selection: 'random',
+    maxInSession: '1',
+    placement: 'random',
+    time: '30',
+  },
+  riddles: {
+    toBeRendered: '1',
+    maxInSession: '1',
+    selection: 'random',
+    time: '30',
+  },
+  funfacts: {
+    toBeRendered: '1',
+    maxInSession: '2',
+    selection: 'random',
+    time: '30',
+  },
+  quizContent: {
+    toBeRendered: 'all',   
+    maxInSession: '10',
+    weightPerCard: '4',
+    placement: 'last',
+    time: '30',
+  },
+  quizScenarioContent: {
+    toBeRendered: 'all',   
+    maxInSession: '10',
+    weightPerCard: '4',
+    placement: 'last',
+    time: '30',
+  },
+};

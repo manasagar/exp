@@ -1,0 +1,41 @@
+{
+  "cli": {
+    "version": ">= 7.3.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "env": {
+        "API_URL" : "http://localhost:6200"
+      },
+      "developmentClient": true,
+      "distribution": "internal",
+      
+    },
+    "preview": {
+      "channel": "staging",
+      "env": {
+        "API_URL": "https://dhrona-mbg4k7zj3a-el.a.run.app"
+      },   
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true,
+      "channel": "production",
+      "env": {
+        "API_URL": "https://dhrona-mbg4k7zj3a-el.a.run.app"
+      },     
+      "android": {
+        "buildType": "app-bundle",
+        "releaseChannel": "default"
+      }
+    }
+  },  
+    "submit": {
+      "production": {
+        "ios": {
+          "metadataPath": "./store.config.js"
+        }
+      }
+    }
+}

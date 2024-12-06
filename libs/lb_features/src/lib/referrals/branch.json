@@ -1,0 +1,50 @@
+{
+  "deferInitForPluginRuntime": true,
+  "branch_key": "",
+  "branch_secret": "",
+  "branch_app_id": "",
+  "branch_key_dev": "",
+  "branch_secret_dev": "",
+  "branch_app_id_dev": "",
+  "ios_team_id": "",
+  "uri_scheme": "",
+  "android_test_mode": false,
+  "branch_test_mode": false,
+  "performance_options": {
+    "disable_automatic_session_management": true,
+    "disable_tracking": false,
+    "enable_automatic_deferred_deep_linking": true,
+    "enable_automatic_link_handling": true,
+    "link_cache_duration": 86400,
+    "max_retries": 3,
+    "retry_interval": 500,
+    "network_timeout": 3000,
+    "session_timeout": 1800,
+    "log_level": "ERROR",
+    "request_metadata": {
+      "source": "web",
+      "version": "1.0.0"
+    }
+  },
+  "security_options": {
+    "validate_signature": true,
+    "use_ssl_pinning": true
+  },
+  "data_options": {
+    "disable_ad_tracking": true,
+    "disable_tracking": false,
+    "enable_advanced_data_encryption": true
+  },
+  "debug_options": {
+    "enable_debug": false,
+    "debug_mode": "LOG"
+  },
+  "user_options": {
+    "enable_user_identity_management": true,
+    "default_user_identity": "anonymous"
+  },
+  "link_options": {
+    "custom_link_domain": "your.custom.domain",
+    "enable_automatic_fallback": true
+  }
+}
