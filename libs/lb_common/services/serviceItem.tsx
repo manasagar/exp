@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
+
   View,
   Text,
   TouchableOpacity,
@@ -8,11 +9,10 @@ import {
   Dimensions,
   GestureResponderEvent
 } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'; // Import MaterialIcons
-// import { useNavigation } from '@react-navigation/native'; // Import useNavigation
-import { useRouter } from "expo-router";
 
-// Type definition for props
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'; 
+
+import { useRouter } from "expo-router";
 interface ServiceItemProps {
   service: {
     title: string;
@@ -20,23 +20,17 @@ interface ServiceItemProps {
     icon: string | number;
     route?: string;
   };
-  numItems?: number; // Allow for dynamic number of items to adjust tile size
+  numItems?: number; 
 }
 
-const ServiceItem: React.FC<ServiceItemProps> = ({ service, numItems = 5 }) => {
+const ServiceItem: React.FC<ServiceItemProps> = React.memo(({ service, numItems = 3 }) => {
 
   const router = useRouter();
-
-  // Get screen width and height
   const { width, height } = Dimensions.get('window');
-
-  // Dynamically calculate the tile height based on the number of items (default to 5)
   const tileHeight = height * 0.8 / numItems;
-
-  // Calculate image height based on tile height
   const imageHeight = tileHeight * 0.6; // 60% of the tile height for the image
 
-  const handlePress = (event: GestureResponderEvent) => {
+  const handlePress = useCallback((event: GestureResponderEvent) => {
     try {
       if (service.route) {
         router.push(`${service.route}`);
@@ -46,7 +40,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, numItems = 5 }) => {
     } catch (error) {
       console.error('Navigation error:', error);
     }
-  };
+  },[service.route, router]);
 
   return (
     <TouchableOpacity
@@ -61,6 +55,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, numItems = 5 }) => {
         }
       ]}
     >
+
       <Image
         source={
           typeof service.icon === 'string'
@@ -72,6 +67,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, numItems = 5 }) => {
           { width: width * 0.25, height: imageHeight }
         ]}
         resizeMode="contain"
+        accessibilityLabel={service.title}
       />
 
       <View style={styles.flex1}>
@@ -84,7 +80,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, numItems = 5 }) => {
       </View>
     </TouchableOpacity>
   );
-};
+});
 
 const styles = StyleSheet.create({
   flexRow: {
